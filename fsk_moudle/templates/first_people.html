@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    	<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<title>Similarity Judger</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    	<meta name="author" content="FREEHTML5.CO" />
+
+      <!--
+    	//////////////////////////////////////////////////////
+
+    	FREE HTML5 TEMPLATE
+    	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+    	Website: 		http://freehtml5.co/
+    	Email: 			info@freehtml5.co
+    	Twitter: 		http://twitter.com/fh5co
+    	Facebook: 		https://www.facebook.com/fh5co
+
+    	//////////////////////////////////////////////////////
+    	 -->
+
+      <!-- Facebook and Twitter integration -->
+    	<meta property="og:title" content=""/>
+    	<meta property="og:image" content=""/>
+    	<meta property="og:url" content=""/>
+    	<meta property="og:site_name" content=""/>
+    	<meta property="og:description" content=""/>
+    	<meta name="twitter:title" content="" />
+    	<meta name="twitter:image" content="" />
+    	<meta name="twitter:url" content="" />
+    	<meta name="twitter:card" content="" />
+
+    	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    	<link rel="shortcut icon" href="favicon.ico">
+
+    	<!-- Google Webfonts -->
+    	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+    	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    	<!-- Animate.css -->
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    	<!-- Icomoon Icon Fonts-->
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    	<!-- Magnific Popup -->
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    	<!-- Salvattore -->
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/salvattore.css') }}">
+    	<!-- Theme Style -->
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    	<!-- Modernizr JS -->
+    	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+    	<!-- FOR IE9 below -->
+    	<!--[if lt IE 9]>
+    	<script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
+
+        <![endif]-->
+
+    	</head>
+    	<body>
+
+    	<div id="fh5co-offcanvass">
+    		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+    		<h1 class="fh5co-logo"><a class="navbar-brand" href="http://ai.icarbonx.com:10086/">ICX Brain 觅 Explorer 脑</a></h1>
+    		<h2 class="fh5co-lead">上传两张相片，我来判断是不是一个人</h2>
+    		<p class="fh5co-social-icons">
+    			<a href="https://www.icarbonx.com/"><i class="icon-dribbble"></i></a>
+    			<a href="https://www.facebook.com/search/str/icarbonx/keywords_search"><i class="icon-facebook"></i></a>
+    			<!--<a href="#"><i class="icon-twitter"></i></a>
+    			<a href="#"><i class="icon-instagram"></i></a>
+    			<a href="#"><i class="icon-youtube"></i></a>-->
+    		</p>
+    	</div>
+    	<header id="fh5co-header" role="banner">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a>
+    					<a class="navbar-brand" href="http://ai.icarbonx.com:10086/">ICX Brain 觅 Explorer 脑</a>
+    				</div>
+    			</div>
+    		</div>
+    	</header>
+    	<!-- END .header -->
+
+
+    	<div id="fh5co-main">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-8 col-md-offset-2">
+    					<h2>[小觅人脸识别]： "给我两张相片，我会识别他们的年龄性别 并判断是不是同一个人"</h2>
+              <div class="fh5co-spacer fh5co-spacer-sm"></div>
+              <p align="Center">
+{#            <img src="{{ url_for('static', filename='images/face-recog.jpg') }}" alt="Free HTML5 template by FREEHTML5.co" class="img-rounded img-responsive">#}
+                  <img src="?" id="imgInit">
+
+                  <script language="javascript">
+                  var adres="../static/images/{{ addres }}";
+                  document.getElementById('imgInit').src = adres;
+                  </script>
+              </p>
+    					<div class="fh5co-spacer fh5co-spacer-sm"></div>
+						 <form method="POST" enctype="multipart/form-data">
+    					<div class="row">
+    						<div class="col-md-4">
+    							<div class="fh5co-pricing-table">
+    								<h3>第一个人的相片</h3>
+    								<ul class="fh5co-list-check">
+    									<li class="fh5co-include">确定照片里有人脸</li>
+    									<li class="fh5co-include">不然我找不到人脸</li>
+    									<li class="fh5co-include">最好离镜头近一点</li>
+    								</ul>
+                      <input name="file1" size="30" type="file">
+                      <input type="submit" value="提交" class="button-new" style="margin-top:15px;">
+
+    							</div>
+    						</div>
+    						<div class="col-md-4">
+    							<div class="fh5co-pricing-table">
+                    <h3>第二个人的相片</h3>
+                    <ul class="fh5co-list-check">
+                      <li class="fh5co-include">可以是同一个人的</li>
+                      <li class="fh5co-include">也可以是另一个人</li>
+                      <li class="fh5co-include">长得很像的两个人</li>
+                    </ul>
+
+                      <input name="file2" type="file">
+                      <input type="submit" value="提交" class="button-new" style="margin-top:15px;"/>
+    						</div>
+                </div>
+    						<div class="col-md-4">
+    							<div class="fh5co-pricing-table">
+                    <h3>匹配识别</h3>
+    								<ul class="fh5co-list-check">
+    									<li class="fh5co-include">3</li>
+    									<li class="fh5co-include">2</li>
+    									<li class="fh5co-include">1</li>
+    								</ul>
+                      <input value="匹配" type="submit">
+
+    							</div>
+    						</div>
+    				</div>
+						 </form>
+						<div class="row">
+    							<div class="fh5co-pricing-table">
+							<ul class="fh5co-list-check">
+								<li class="fh5co-include">结果：{{result1}}</li>
+                                <li class="fh5co-include">相似指数：{{result2}}</li>
+                    </ul>
+						</div></div>
+{#              <p> Project Member: Bo Jin Zheng Jie, Kevin Wang</p>#}
+{#              <p> Reference: https://github.com/ageitgey/face_recognition</p>#}
+            	</div>
+           </div>
+
+        </div>
+    	<footer id="fh5co-footer">
+
+    		<div class="container">
+    			<div class="row row-padded">
+    				<div class="col-md-12 text-center">
+    					<p class="fh5co-social-icons">
+    						<a href="https://www.icarbonx.com/"><i class="icon-dribbble"></i></a>
+    						<a href="https://www.facebook.com/search/str/icarbonx/keywords_search"><i class="icon-facebook"></i></a>
+    						<!--<a href="#"><i class="icon-twitter"></i></a>
+    						<a href="#"><i class="icon-instagram"></i></a>
+    						<a href="#"><i class="icon-youtube"></i></a>-->
+    					</p>
+    					<p><small>&copy; iCarbonX. All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>&<a href="http://omics.georgetown.edu/wangminkun/" target="_blank"> Kevin M. Wang</a> | Images by: <a href="http://google.com" target="_blank">Google</a> </small></p>
+    					</div>
+    			</div>
+    		</div>
+    	</footer>
+
+
+    	<!-- jQuery -->
+    	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    	<!-- jQuery Easing -->
+    	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+    	<!-- Bootstrap -->
+    	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    	<!-- Waypoints -->
+    	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+    	<!-- Magnific Popup -->
+    	<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    	<!-- Salvattore -->
+    	<script src="{{ url_for('static', filename='js/salvattore.min.js') }}"></script>
+    	<!-- Main JS -->
+    	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+        </div>
+    	</body>
+    </html>
